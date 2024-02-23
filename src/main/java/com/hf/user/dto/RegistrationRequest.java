@@ -2,6 +2,8 @@ package com.hf.user.dto;
 
 import java.sql.Date;
 
+import jakarta.validation.constraints.Size;
+
 //RegistrationRequest.java
 
 public class RegistrationRequest {

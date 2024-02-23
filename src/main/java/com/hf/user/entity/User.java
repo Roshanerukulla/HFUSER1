@@ -29,7 +29,6 @@ public class User {
     private String username;
 
     @NotEmpty
-    @Size(max = 32)
     @Column(name="password")
     private String password;
 
@@ -48,12 +47,26 @@ public class User {
 
     @Column(name="dob")
     private Date dob;
+    
+    @Column(name="coachid")
+    private String coachid;
+    
+    
 
-    @Override
+   
+	public String getCoachid() {
+		return coachid;
+	}
+
+	public void setCoachid(String coachid) {
+		this.coachid = coachid;
+	}
+
+	@Override
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", password=" + password + ", firstName=" + firstName
-				+ ", lastName=" + lastName + ", emailId=" + emailId + ", dob=" + dob + ", confirmPassword="
-				+ confirmPassword + "]";
+				+ ", lastName=" + lastName + ", emailId=" + emailId + ", dob=" + dob + ", coachid=" + coachid
+				+ ", confirmPassword=" + confirmPassword + "]";
 	}
 
 	public Long getId() {

@@ -1,7 +1,7 @@
 package com.hf.user.controller;
-
 //LoginController.java
-import org.springframework.beans.factory.annotation.Autowired;
+//LoginController.java
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,11 +15,19 @@ import com.hf.user.service.LoginService;
 @RequestMapping("/login")
 public class LoginController {
 
- @Autowired
- private LoginService loginService;
+ private final LoginService loginService;
+
+ public LoginController(LoginService loginService) {
+     this.loginService = loginService;
+ }
 
  @PostMapping("/authenticate")
- public User loginUser(@RequestBody LoginRequest loginRequest) {
-     return loginService.loginUser(loginRequest.getUsername(), loginRequest.getPassword());
+ public ResponseEntity<?> loginUser(@RequestBody LoginRequest loginRequest) {
+     User user = loginService.loginUser(loginRequest.getUsername(), loginRequest.getPassword());
+     if (user != null) {
+         return ResponseEntity.ok(user);
+     } else {
+         return ResponseEntity.status(401).body("Invalid credentials");
+     }
  }
 }
