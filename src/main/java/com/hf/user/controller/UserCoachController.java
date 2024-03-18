@@ -23,14 +23,23 @@ public class UserCoachController {
     public String getUserCoachInfo(@PathVariable Long userId) {
         User user = userService.getUserDetails(userId);
 
-        if (user != null && user.getCoachid() != null) {
-            String coachName = coachFeignClient.getCoachNameById(Long.parseLong(user.getCoachid()));
+        if (user != null && user.getCoachId() != null) {
+            String coachName = coachFeignClient.getCoachNameById((user.getCoachId()));
             // Assuming you have a getter for coachName in the User entity
             return "Your coach is: " + coachName;
         }
 
         return "No coach assigned.";
     }
+    @GetMapping("/getcoachidinfo/{userId}")
+    public Long getUserCoachidInfo(@PathVariable Long userId) {
+        User user = userService.getUserDetails(userId);
+
+       
+            return user.getCoachId();
+        
+    }
+
 
     // Other user-related endpoints...
 }
