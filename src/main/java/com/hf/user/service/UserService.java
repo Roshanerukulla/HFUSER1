@@ -7,4 +7,5 @@ import com.hf.user.entity.User;
 @Service
 public interface UserService {
  public User getUserDetails(Long userId);
+ Long getUserId(Long userId);
 }
