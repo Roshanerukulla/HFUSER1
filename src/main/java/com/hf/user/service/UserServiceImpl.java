@@ -16,5 +16,10 @@ public class UserServiceImpl implements UserService {
 	public User getUserDetails(Long userId) {
 		 return ur.findById(userId).orElse(null);
 	}
+	@Override
+	public Long getUserId(Long userId) {
+		// TODO Auto-generated method stub
+		return userId;
+	}
 
 }
