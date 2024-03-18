@@ -27,7 +27,7 @@ public class LoginServiceImpl implements LoginService {
  public User loginUser(String username, String password) {
      Optional<User> userOptional = Optional.ofNullable(userRepository.findByUsername(username));
 
-     // Your existing login logic without security.core
+    
 
      return userOptional.orElse(null);
  }
