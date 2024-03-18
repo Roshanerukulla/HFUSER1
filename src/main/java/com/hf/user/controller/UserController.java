@@ -20,6 +20,10 @@ public class UserController {
 	public User getUser(@PathVariable Long userId) {
 		return us.getUserDetails(userId);
 	}
+	@GetMapping("/{userId}/id")
+    public Long getUserId(@PathVariable Long userId) {
+        return us.getUserId(userId);
+    }
 	
 	
 	
