@@ -49,23 +49,36 @@ public class User {
     private Date dob;
     
     @Column(name="coachid")
-    private String coachid;
+    private Long coachId;
     
-    
-
    
-	public String getCoachid() {
-		return coachid;
+    
+    @Column(name = "avatarId")  // New field to store the selected avatar ID
+    private Long avatarId;
+   
+	public Long getAvatarId() {
+		return avatarId;
 	}
 
-	public void setCoachid(String coachid) {
-		this.coachid = coachid;
+
+	public void setAvatarId(Long avatarId) {
+		this.avatarId = avatarId;
+	}
+
+
+	public Long getCoachId() {
+		return coachId;
+	}
+
+
+	public void setCoachId(Long coachid) {
+		this.coachId = coachid;
 	}
 
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", password=" + password + ", firstName=" + firstName
-				+ ", lastName=" + lastName + ", emailId=" + emailId + ", dob=" + dob + ", coachid=" + coachid
+				+ ", lastName=" + lastName + ", emailId=" + emailId + ", dob=" + dob + ", coachid=" + coachId
 				+ ", confirmPassword=" + confirmPassword + "]";
 	}
 
