@@ -26,8 +26,7 @@ public class RegistrationController {
         user.setLastName(registrationRequest.getLastName());
         user.setEmailId(registrationRequest.getEmailId());
         user.setDob(registrationRequest.getDob());
-        user.setConfirmPassword(registrationRequest.getConfirmPassword());
 
-        return registrationService.registerUser(user, registrationRequest.getConfirmPassword());
+        return registrationService.registerUser(user);
     }
 }

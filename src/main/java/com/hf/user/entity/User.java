@@ -10,10 +10,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
+
 @Component
 @Table(name = "user")
 @Entity
@@ -51,8 +51,6 @@ public class User {
     @Column(name="coachid")
     private Long coachId;
     
-   
-    
     @Column(name = "avatarId")  // New field to store the selected avatar ID
     private Long avatarId;
    
@@ -79,7 +77,7 @@ public class User {
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", password=" + password + ", firstName=" + firstName
 				+ ", lastName=" + lastName + ", emailId=" + emailId + ", dob=" + dob + ", coachid=" + coachId
-				+ ", confirmPassword=" + confirmPassword + "]";
+				+ "]";
 	}
 
 	public Long getId() {
@@ -137,18 +135,4 @@ public class User {
 	public void setDob(Date dob) {
 		this.dob = dob;
 	}
-
-	public String getConfirmPassword() {
-		return confirmPassword;
-	}
-
-	public void setConfirmPassword(String confirmPassword) {
-		this.confirmPassword = confirmPassword;
-	}
-	
-	@Column(name="confirmPassword")
-	@NotEmpty
-    private String confirmPassword;
-
-
 }

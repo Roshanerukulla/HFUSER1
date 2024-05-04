@@ -11,6 +11,11 @@ import com.hf.user.entity.User;
 public interface UserRepository extends CrudRepository<User, Long> {
     User findByUsername(String username);
 
-    @Query("SELECT u.username FROM User u WHERE u.id IN :ids")
-    List<String> findUsernamesByIds(@Param("ids") List<Long> ids);
+    @Query("SELECT COUNT(u) > 0 FROM User u WHERE u.username = :username")
+    boolean existsByUsername(@Param("username") String username);
+
+//    @Query("SELECT u.username FROM User u WHERE u.id IN :ids")
+//    List<String> findUsernamesByIds(@Param("ids") List<Long> ids);
+
+	String findUsernamesById(Long userId);
 }

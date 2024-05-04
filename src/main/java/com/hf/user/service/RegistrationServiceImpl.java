@@ -20,10 +20,10 @@ public class RegistrationServiceImpl implements RegistrationService {
     }
 
     @Override
-    public User registerUser(User user, String confirmPassword) {
-        if (!user.getPassword().equals(confirmPassword)) {
-            // Handle mismatch error
-            throw new RuntimeException("Password and Confirm Password do not match");
+    public User registerUser(User user) {
+        // Check if the username is already taken
+        if (userRepository.existsByUsername(user.getUsername())) {
+            throw new RuntimeException("Username already exists");
         }
 
         // Encrypt the password using BCrypt

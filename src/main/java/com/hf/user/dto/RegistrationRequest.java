@@ -2,75 +2,65 @@ package com.hf.user.dto;
 
 import java.sql.Date;
 
-import jakarta.validation.constraints.Size;
 
-//RegistrationRequest.java
 
 public class RegistrationRequest {
 
- private String username;
- private String password;
- private String firstName;
- private String lastName;
- private String emailId;
- private Date dob;
- private String confirmPassword;
+    private String username;
+    private String password;
+    private String firstName;
+    private String lastName;
+    private String emailId;
+    private Date dob;
+    
 
- // getters and setters
+    public String getUsername() {
+        return username;
+    }
 
- public String getUsername() {
-     return username;
- }
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
- public void setUsername(String username) {
-     this.username = username;
- }
+    public String getPassword() {
+        return password;
+    }
 
- public String getPassword() {
-     return password;
- }
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
- public void setPassword(String password) {
-     this.password = password;
- }
+    public String getFirstName() {
+        return firstName;
+    }
 
- public String getFirstName() {
-     return firstName;
- }
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
- public void setFirstName(String firstName) {
-     this.firstName = firstName;
- }
+    public String getLastName() {
+        return lastName;
+    }
 
- public String getLastName() {
-     return lastName;
- }
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
- public void setLastName(String lastName) {
-     this.lastName = lastName;
- }
+    public String getEmailId() {
+        return emailId;
+    }
 
- public String getEmailId() {
-     return emailId;
- }
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
+    }
 
- public void setEmailId(String emailId) {
-     this.emailId = emailId;
- }
+    public Date getDob() {
+        return dob;
+    }
 
- public Date getDob() {
-     return dob;
- }
+    public void setDob(Date dob) {
+        this.dob = dob;
+    }
 
- public void setDob(Date dob) {
-     this.dob = dob;
- }
-
- public String getConfirmPassword() {
-     return confirmPassword;
- }
-
- public void setConfirmPassword(String confirmPassword) {
-     this.confirmPassword = confirmPassword;
- }
+ 
 }

@@ -8,4 +8,5 @@ import com.hf.user.entity.User;
 public interface UserService {
  public User getUserDetails(Long userId);
  Long getUserId(Long userId);
+public String getUsername(Long userId);
 }

@@ -18,8 +18,13 @@ public class UserServiceImpl implements UserService {
 	}
 	@Override
 	public Long getUserId(Long userId) {
-		// TODO Auto-generated method stub
-		return userId;
+	    return ur.findById(userId).map(User::getId).orElse(null);
 	}
+	@Override
+	public String getUsername(Long userId) {
+		// TODO Auto-generated method stub
+		return ur.findUsernamesById(userId);
+	}
+
 
 }
